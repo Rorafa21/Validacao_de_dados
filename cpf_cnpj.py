@@ -1,7 +1,7 @@
 from validate_docbr import CPF, CNPJ
 
-class Documento:
 
+class Documento:
     @staticmethod
     def cria_documento(documento):
         if len(documento) == 11:
@@ -10,6 +10,7 @@ class Documento:
             return DocCnpj(documento)
         else:
             raise ValueError("Quantidade de digitos invalida")
+
 
 class DocCpf:
     def __init__(self, documento):
@@ -24,9 +25,11 @@ class DocCpf:
     def valida(self, documento):
         validador = CPF()
         return validador.validate(documento)
+
     def format(self):
         mascara = CPF()
         return mascara.mask(self.cpf)
+
 
 class DocCnpj:
     def __init__(self, documento):
@@ -41,7 +44,7 @@ class DocCnpj:
     
     def valida(self,documento):
         validate_cnpj = CNPJ()
-        return validate_cnpj.validate(self.cnpj)
+        return validate_cnpj.validate(documento)
 
     def format(self):
         mascara = CNPJ()
