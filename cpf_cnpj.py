@@ -20,7 +20,7 @@ class DocCpf:
             raise ValueError("Cpf Invalido!!")
 
     def __str__(self):
-        return self.format
+        return self.format()
 
     def valida(self, documento):
         validador = CPF()
@@ -40,7 +40,7 @@ class DocCnpj:
             raise ValueError("Cnpj Invalido!!!")
 
     def __str__(self):
-        return self.format
+        return self.format()
     
     def valida(self,documento):
         validate_cnpj = CNPJ()
